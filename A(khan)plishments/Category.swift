@@ -10,7 +10,11 @@ import Foundation
 import SwiftyJSON
 
 struct Category {
+    
+    //Added by me
+    var id: Int?
 
+    //Straight from JSON
     var category: Int?
     var chart_icon_src: String?
     var description: String?
@@ -19,8 +23,8 @@ struct Category {
     var type_label: String?
 
 //    required init(json: JSON, index: Int?) {
-//        //self.category.......
+//        self.category = json[]
 //    
 //    }
-//
+
 }

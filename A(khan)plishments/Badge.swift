@@ -9,7 +9,11 @@
 import Foundation
 
 struct Badge {
-
+    
+    //Added by me
+    var id: Int?
+    
+    //straight from JSON
     var icon_src: String?
     var hide_context: Bool?
     var description: String?
