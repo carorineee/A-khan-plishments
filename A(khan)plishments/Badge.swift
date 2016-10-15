@@ -7,29 +7,24 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct Badge {
+class Badge {
     
-    //Added by me
-    var id: Int?
-    
-    //straight from JSON
-    var icon_src: String?
-    var hide_context: Bool?
-    var description: String?
-    var relative_url: String?
-    var icons: [String: String]?
-    var absolute_url: String?
-    var user_badges: [AnyObject]?
-    var translated_safe_extended_description: String?
-    var translated_description: String?
-    var is_owned: Bool?
-    var badge_category: Int?
-    var points: Int?
-    var is_retired: Bool?
-    var safe_extended_description: String?
-    var slug: String?
     var name: String?
+    var category: Int?
+    var description: String?
+    var icon_src: String?
+    var absolute_url: String?
+    var points: Int?
 
+    required init(json: JSON) {
+        self.name = json["translated_description"].stringValue
+        self.category = json["badge_category"].int
+        self.description = json["translated_safe_extended_description"].stringValue
+        self.icon_src = json["icon_src"].stringValue
+        self.absolute_url = json["absolute_url"].stringValue
+        self.points = json["points"].int
+    }
 
 }

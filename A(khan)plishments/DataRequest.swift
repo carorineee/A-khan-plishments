@@ -15,12 +15,9 @@ let categoryEndpoint = "/api/v1/badges/categories"
 
 class DataRequest {
     
-    var categories = [JSON]()
-    var badges = [JSON]()
-    
-    func fetchCategories(completion: @escaping (([JSON]?) -> Void)) {
+    func fetchCategories(completion: @escaping (([Category]?) -> Void)) {
         
-        var cats = [JSON]()
+        var categories = [Category]()
         
         Alamofire.request("\(baseURL)\(categoryEndpoint)").responseJSON { response in
             switch response.result {
@@ -28,10 +25,10 @@ class DataRequest {
                 if let returnedJSON = response.result.value {
                     let json = JSON(returnedJSON)
                     for (_, subJson):(String, JSON) in json {
-                        cats.append(subJson)
+                        categories.append(Category(json: subJson))
                     }
                 }
-            completion(cats)
+            completion(categories)
                 
             case .failure(let error):
                 print(error)
@@ -39,20 +36,27 @@ class DataRequest {
         }
     }
     
-    func fetchBadges() -> [JSON] {
-        Alamofire.request("\(baseURL)\(badgeEndpoint)").responseJSON { (response) -> Void in
-            
-            if let returnedJSON = response.result.value {
-                let json = JSON(returnedJSON)
-                for (_, subJson):(String, JSON) in json {
-                    self.badges.append(subJson)
+    func fetchBadges(completion: @escaping (([Badge]?) -> Void)) {
+        
+        var badges = [Badge]()
+        
+        Alamofire.request("\(baseURL)\(badgeEndpoint)").responseJSON { response in
+            switch response.result {
+            case .success:
+                if let returnedJSON = response.result.value {
+                    let json = JSON(returnedJSON)
+                    for (_, subJson):(String, JSON) in json {
+                        badges.append(Badge(json: subJson))
+                    }
                 }
+                completion(badges)
+                
+            case .failure(let error):
+                print(error)
             }
         }
-        return badges
     }
 
 
 }
 
-// https://www.khanacademy.org/api/v1/badges/categories

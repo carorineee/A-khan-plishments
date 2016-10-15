@@ -18,7 +18,7 @@ class Category {
     var icon_src: String?
     var large_icon_src: String?
 
-    required init(json: JSON, index: Int?) {
+    required init(json: JSON) {
         self.name = json["type_label"].stringValue
         self.categoryID = json["category"].int
         self.description = json["description"].stringValue

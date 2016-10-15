@@ -10,6 +10,12 @@ import UIKit
 
 class BadgeDetailViewController: UIViewController {
 
+    //MARK: Outlets
+    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var badgeTitle: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

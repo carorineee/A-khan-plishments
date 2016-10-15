@@ -13,7 +13,7 @@ import SwiftyJSON
 class CategoriesTableViewController: UITableViewController {
     
     //MARK: Variables
-    var categories = [JSON]()
+    var categories = [Category]()
     var requester = DataRequest()
     
     
@@ -29,11 +29,8 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-//        cell.textLabel?.text = (self.categories[indexPath.row]["type_label"].string)!
-//        cell.detailTextLabel?.text = (self.categories[indexPath.row]["description"].string)!
-        
-//        cell.textLabel?.text =
-//        cell.detailTextLabel?.text =
+        cell.textLabel?.text = (self.categories[indexPath.row].name)!
+        cell.detailTextLabel?.text = (self.categories[indexPath.row].description)!
         
         
         return cell
@@ -44,8 +41,8 @@ class CategoriesTableViewController: UITableViewController {
     }
     
 
+    
     //MARK: Lifecycle Methods
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
