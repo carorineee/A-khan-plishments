@@ -12,6 +12,8 @@
 		5040A72E1DAEF3FF00560B3F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5040A72C1DAEF3FF00560B3F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5040A7311DAF16EC00560B3F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5040A7301DAF16EC00560B3F /* SwiftyJSON.framework */; };
 		5040A7321DAF16EC00560B3F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5040A7301DAF16EC00560B3F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		504DF5FA1DB1F58100C347C5 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504DF5F81DB1EE3E00C347C5 /* AlamofireImage.framework */; };
+		504DF5FB1DB1F58100C347C5 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 504DF5F81DB1EE3E00C347C5 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		505456481DAD97AC00ACC53B /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505456471DAD97AC00ACC53B /* Badge.swift */; };
 		5054564F1DAE01C700ACC53B /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5054564E1DAE01C700ACC53B /* DataRequest.swift */; };
 		505456511DAE043400ACC53B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505456501DAE043400ACC53B /* Category.swift */; };
@@ -31,6 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				504DF5FB1DB1F58100C347C5 /* AlamofireImage.framework in Embed Frameworks */,
 				5040A7321DAF16EC00560B3F /* SwiftyJSON.framework in Embed Frameworks */,
 				5040A72E1DAEF3FF00560B3F /* Alamofire.framework in Embed Frameworks */,
 			);
@@ -43,6 +46,7 @@
 		5040A72A1DAEEFF400560B3F /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5040A72C1DAEF3FF00560B3F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5040A7301DAF16EC00560B3F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		504DF5F81DB1EE3E00C347C5 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		505456471DAD97AC00ACC53B /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		5054564E1DAE01C700ACC53B /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		505456501DAE043400ACC53B /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -64,12 +68,21 @@
 			files = (
 				5040A7311DAF16EC00560B3F /* SwiftyJSON.framework in Frameworks */,
 				5040A72D1DAEF3FF00560B3F /* Alamofire.framework in Frameworks */,
+				504DF5FA1DB1F58100C347C5 /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		504DF5F71DB1EE3D00C347C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				504DF5F81DB1EE3E00C347C5 /* AlamofireImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5054564D1DAE01B500ACC53B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 				5040A72A1DAEEFF400560B3F /* Cartfile */,
 				5066DDB11DAC9B97003A9C4E /* A(khan)plishments */,
 				5066DDB01DAC9B97003A9C4E /* Products */,
+				504DF5F71DB1EE3D00C347C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

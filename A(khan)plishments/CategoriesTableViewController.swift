@@ -36,10 +36,6 @@ class CategoriesTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
 
     
     //MARK: Lifecycle Methods
@@ -52,7 +48,6 @@ class CategoriesTableViewController: UITableViewController {
             self.categories = categories!
             self.tableView.reloadData()
         })
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +58,9 @@ class CategoriesTableViewController: UITableViewController {
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CategorySelected" {
-            
+            if let index = tableView.indexPathForSelectedRow?.row, let destinationViewController = segue.destination as? BadgesTableViewController {
+                destinationViewController.categoryID = categories[index].categoryID
+            }
         }
     }
 

@@ -36,7 +36,7 @@ class DataRequest {
         }
     }
     
-    func fetchBadges(completion: @escaping (([Badge]?) -> Void)) {
+    func fetchBadgesWithCategory(categoryIndex: Int, completion: @escaping (([Badge]?) -> Void)) {
         
         var badges = [Badge]()
         
@@ -46,7 +46,10 @@ class DataRequest {
                 if let returnedJSON = response.result.value {
                     let json = JSON(returnedJSON)
                     for (_, subJson):(String, JSON) in json {
-                        badges.append(Badge(json: subJson))
+                        if subJson["badge_category"].int == categoryIndex {
+                            badges.append(Badge(json: subJson))
+                            print(badges)
+                        }
                     }
                 }
                 completion(badges)
