@@ -9,22 +9,23 @@
 import Foundation
 import SwiftyJSON
 
-struct Category {
-    
-    //Added by me
-    var id: Int?
+class Category {
 
-    //Straight from JSON
-    var category: Int?
-    var chart_icon_src: String?
+    var name: String?
+    var categoryID: Int?
     var description: String?
+    var chart_icon_src: String?
     var icon_src: String?
     var large_icon_src: String?
-    var type_label: String?
 
-//    required init(json: JSON, index: Int?) {
-//        self.category = json[]
-//    
-//    }
+    required init(json: JSON, index: Int?) {
+        self.name = json["type_label"].stringValue
+        self.categoryID = json["category"].int
+        self.description = json["description"].stringValue
+        self.chart_icon_src = json["chart_icon_src"].stringValue
+        self.icon_src = json["icon_src"].stringValue
+        self.large_icon_src = json["large_icon_src"].stringValue
+    
+    }
 
 }

@@ -29,8 +29,12 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-        cell.textLabel?.text = (self.categories[indexPath.row]["type_label"].string)!
-        cell.detailTextLabel?.text = (self.categories[indexPath.row]["description"].string)!
+//        cell.textLabel?.text = (self.categories[indexPath.row]["type_label"].string)!
+//        cell.detailTextLabel?.text = (self.categories[indexPath.row]["description"].string)!
+        
+//        cell.textLabel?.text =
+//        cell.detailTextLabel?.text =
+        
         
         return cell
     }
@@ -51,10 +55,6 @@ class CategoriesTableViewController: UITableViewController {
             self.categories = categories!
             self.tableView.reloadData()
         })
-        
-        if self.categories.count > 0 {
-            self.tableView.reloadData()
-        }
         
     }
 
