@@ -15,6 +15,7 @@ class BadgesTableViewController: UITableViewController {
     
     var badges = [Badge]()
     var categoryID: Int?
+    var categoryName: String?
     var requester = DataRequest()
 
 
@@ -28,7 +29,7 @@ class BadgesTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
-        
+        self.title = categoryName
     }
 
     override func didReceiveMemoryWarning() {

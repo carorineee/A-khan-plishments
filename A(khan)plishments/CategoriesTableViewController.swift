@@ -60,6 +60,7 @@ class CategoriesTableViewController: UITableViewController {
         if segue.identifier == "CategorySelected" {
             if let index = tableView.indexPathForSelectedRow?.row, let destinationViewController = segue.destination as? BadgesTableViewController {
                 destinationViewController.categoryID = categories[index].categoryID
+                destinationViewController.categoryName = categories[index].name
             }
         }
     }

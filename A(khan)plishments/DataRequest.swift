@@ -24,9 +24,10 @@ class DataRequest {
             case .success:
                 if let returnedJSON = response.result.value {
                     let json = JSON(returnedJSON)
-                    for (_, subJson):(String, JSON) in json {
-                        categories.append(Category(json: subJson))
-                    }
+                    let jsonArray = json.arrayValue
+                    categories = jsonArray.map({
+                        Category(json: $0)
+                    })
                 }
             completion(categories)
                 
@@ -45,12 +46,13 @@ class DataRequest {
             case .success:
                 if let returnedJSON = response.result.value {
                     let json = JSON(returnedJSON)
-                    for (_, subJson):(String, JSON) in json {
-                        if subJson["badge_category"].int == categoryIndex {
-                            badges.append(Badge(json: subJson))
-                            print(badges)
-                        }
-                    }
+                    let jsonArray = json.arrayValue
+                    badges = jsonArray.map({
+                        Badge(json: $0)
+                    })
+                    badges = badges.filter({
+                        $0.categoryID == categoryIndex
+                    })
                 }
                 completion(badges)
                 
